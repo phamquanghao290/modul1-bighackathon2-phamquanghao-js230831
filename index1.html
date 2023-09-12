@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Card Management</title>
+</head>
+
+<body>
+    <fieldset>
+        <div class="container">
+            <h1>Select card</h1>
+            <div id="cardImg" class="bank">
+                <a href="#"><img src="./image/master.jpg" alt="MasterCard"></a>
+                <a href="#"><img src="./image/paypal.jpg" alt="PayPal"></a>
+                <a href="#"><img src="./image/visa.jpg" alt="Visa"></a>
+                <a href="#"><img src="./image/american.jpg" alt="American"></a>
+                <a href="#"><img src="./image/discover.jpg" alt="Discover"></a>
+            </div>
+            <hr>
+            <div class="card">
+                <label for="cardNumber">Card Number</label><br>
+                <input id="cardNumber" type="text" placeholder="Enter card number" required pattern="[0-9]{16}">
+                <span class="material-symbols-outlined">
+                    done
+                </span>
+            </div>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td><label for="expiryDate">Expiry Date</label></td>
+                        <td><label for="cvc" class="cvc">CVC/CVV</label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="expiryDate" type="date" required></td>
+                        <td><input id="cvc" type="text" class="cvc" placeholder="CVC/CVV" required pattern="[0-9]{3}">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input onclick="addCard()" type="button" value="Save">
+        </div>
+    </fieldset>
+    <fieldset>
+        <div id="cardList">
+            <h2 style="text-align: center;">Danh sách Card</h2>
+            <table border="1px" cellpadding="15px" cellspacing="5px" style="margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th>Card Img</th>
+                        <th>Card Number</th>
+                        <th>Expiry Date</th>
+                        <th>CVV</th>
+                        <th colspan="3">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="cardTableBody"></tbody>
+            </table>
+        </div>
+    </fieldset>
+
+    <script src="/hack.js"></script>
+</body>
+
+</html>
